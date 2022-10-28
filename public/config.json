@@ -4,6 +4,7 @@
        "icon": "images/iconSmall.png",
        "category": "message"
     },
+    "key": "REST-1", 
     "type": "REST",
     "lang": {
        "en-US": {
@@ -16,51 +17,53 @@
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" 
+                  "email": "test@gmail.com",
+                  "to": "8384920507" 
                 }               
             ],
-            "outArguments": [],
+            "outArguments": [
+
+		],
             "url": "https://twilio-applica.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 2000
         }
     },
     "configurationArguments": {
       "applicationExtensionKey": "5a2e916c-27b0-4079-b498-846ac48f9b67",
        "save": {
-           "url": "https://twilio-applica.herokuapp.com/save",
+           "url": "https://twilio-applica.herokuapp.com/journeybuilder/save",
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 2000
        },
        "publish": {
-           "url": "https://twilio-applica.herokuapp.com/publish",
+           "url": "https://twilio-applica.herokuapp.com/journeybuilder/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 2000
        },
        "validate": {
-           "url": "https://twilio-applica.herokuapp.com/validate",
+           "url": "https://twilio-applica.herokuapp.com/journeybuilder/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 2000
        },
        "stop": {
-           "url": "https://twilio-applica.herokuapp.com/stop",
+           "url": "https://twilio-applica.herokuapp.com/journeybuilder/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 2000
        }
     },
@@ -93,12 +96,33 @@
                         }
                     },                    
                     {
+                        "from": {
+                            "dataType": "Phone",
+                            "isNullable": true,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "to": {
+                            "dataType": "Phone",
+                            "isNullable": true,
+                            "direction": "out"   
+                        }
+                    },
+                    {
                         "body": {
                             "dataType": "String",
                             "isNullable": true,
                             "direction": "out"   
                         }
                     },                    
+                    {
+                        "email": {
+                            "dataType": "Email",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    }
                 ],
                 "outArguments": []
             }
