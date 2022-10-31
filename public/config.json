@@ -22,7 +22,7 @@
                 }               
             ],
             "outArguments": [
-		
+		"access_token": "{{Interaction.REST-1.access_token}}
 
 		],
             "url": "https://twilio-applica.herokuapp.com/journeybuilder/execute",
@@ -125,9 +125,15 @@
                         }
                     }
                 ],
-                "outArguments": [
-				
-			]
+                 "outArguments": [
+				{
+                        "access_token": {
+                            "dataType": "Text",
+                            "direction": "out",
+                            "access": "visible"
+                        }
+                    }
+		]
             }
         }
     }
