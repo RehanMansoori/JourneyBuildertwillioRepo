@@ -22,9 +22,7 @@
                 }               
             ],
             "outArguments": [
-		 {
-                "access_token": "{{Interaction.REST-1.access_token}}"
-             } 
+		    {"access_token": "{{Interaction.REST-1.access_token}}"} 
 		],
             "url": "https://twilio-applica.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
