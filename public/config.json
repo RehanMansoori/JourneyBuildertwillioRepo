@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "Twilio SMS",
+           "name": "Twilio SMS new",
            "description": "Send Twilio SMS with Journey Builder",
            "TwilioMessage":"test"
        }
@@ -127,7 +127,6 @@
                 ],
                  "outArguments": [
 				
-                    }
 		]
             }
         }
