@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "Twilio SMS new",
+           "name": "Twilio SMS New",
            "description": "Send Twilio SMS with Journey Builder",
            "TwilioMessage":"test"
        }
@@ -22,7 +22,10 @@
                 }               
             ],
             "outArguments": [
-		    {"access_token": "{{Interaction.REST-1.access_token}}"} 
+		 {
+                "access_token": "{{Interaction.REST-1.access_token}}"
+             } 
+
 		],
             "url": "https://twilio-applica.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
@@ -124,16 +127,15 @@
                         }
                     }
                 ],
-                 "outArguments": [
-			 {
+                "outArguments": [
+				{
                         "access_token": {
                             "dataType": "Text",
                             "direction": "out",
                             "access": "visible"
                         }
                     }
-				
-		]
+			]
             }
         }
     }
