@@ -1,3 +1,11 @@
+import express from "express";
+import axios from "axios";
+import fetch from "node-fetch";
+import "dotenv/config"; // loads env variables from .env file
+
+const { CLIENT_ID, APP_SECRET } = process.env;
+
+
 'use strict';
 var util = require('util');
 
@@ -101,7 +109,18 @@ exports.execute = function (req, res) {
     // FOR TESTING
     logData(req);
     //res.send(200, 'Publish');
-    res.send({"access_token" : "success"})
+    const base = "https://login.salesforce.com"
+
+    const response = await fetch(base + "/services/oauth2/token", {
+    method: "post",
+    body: "grant_type=client_credentials",
+    headers: {
+      Authorization:
+        "Basic " + Buffer.from(3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3 + ":" + FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3).toString("base64"),
+    },
+  });
+  const data = await response.json();
+    res.send({"access_token" : data})
 };
 
 
