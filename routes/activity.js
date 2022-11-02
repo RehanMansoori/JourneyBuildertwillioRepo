@@ -113,13 +113,18 @@ exports.execute = function (req, res) {
 
     const response = await fetch(base + "/services/oauth2/token", {
     method: "post",
-    body: "grant_type=client_credentials",
+    body: "grant_type=password",
+        "username":"rehan@mansoori.com",
+         "password":"785392more",
+        
     headers: {
       Authorization:
-        "Basic " + Buffer.from(3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3 + ":" + FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3).toString("base64"),
+        "Basic " + Buffer.from("3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3" + ":" + "FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3").toString("base64"),
     },
   });
+    console.log('base url= '+base);
   const data = await response.json();
+    console.log(data);
     res.send({"access_token" : data})
 };
 
