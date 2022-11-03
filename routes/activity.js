@@ -103,7 +103,7 @@ exports.execute = function (req, res) {
     console.log("1");	
     //console.log("Executed: "+req.body.inArguments[0]);
     
-    base = https://login.salesforce.com;
+    base = "https://login.salesforce.com";
 	const response = await fetch(base + "/services/oauth2/token", {
     method: "post",
     body: "grant_type=password",
