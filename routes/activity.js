@@ -4,12 +4,7 @@ import fetch from "node-fetch";
 import "dotenv/config"; // loads env variables from .env file
 const app = express();
 
-// test route
-app.get("/test", async (req, res) => {
-  const data = await execute();
-  console.log(data);
-  res.json(data);
-});
+
 const { 3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3, FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3 } = process.env;
 'use strict';
 var util = require('util');
