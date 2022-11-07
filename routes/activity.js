@@ -90,34 +90,8 @@ exports.execute = function (req, res) {
 
     console.log("5 -- For Execute");	
     console.log("4");	
-    //console.log("Executed: "+req.body.inArguments[0]);
-	
-	var request = require('request');
-	var options = {
-  'method': 'POST',
-  'url': 'https://login.salesforce.com/services/oauth2/token',
-  'headers': {
-    'Content-Type': 'application/json',
-    'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:0; LSKey-c$CookieConsentPolicy=0:0'
-  },
-  formData: {
-    'client_id': '3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3',
-    'client_secret': 'FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3',
-    'grant_type': 'password ',
-    'username': 'rehan@mansoori.com',
-    'password': '785392more'
-  }
-};
-request(options, function (error, response) {
-  if (error) throw new Error(error);
-  console.log(response.body);
-	const obj = JSON.parse(response.body);
-  console.log(obj.access_token);
- var access_token = obj.access_token;
-	console.log('access token '+access_token);
-	res.send("access_token",access_token);
+   
 });
-}
 
 
 /*
