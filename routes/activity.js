@@ -109,9 +109,13 @@ var options = {
 request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
+    const obj = JSON.parse(response.body);
+  console.log(obj.access_token);
+ var access_token = obj.access_token;
+	console.log('access token '+access_token);
 });
 
-   //res.send(200, 'execute');
+   res.send('access_token',access_token);
 };
 
 
