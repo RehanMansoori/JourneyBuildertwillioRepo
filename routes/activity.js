@@ -110,7 +110,7 @@ exports.execute = function (req, res) {
 };
 request(options, function (error, response) {
   if (error) throw new Error(error);
-  console.log(response.body);
+  console.log(response.body.access_token);
 });
 }
 
