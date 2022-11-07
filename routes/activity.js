@@ -1,11 +1,3 @@
-import express from "express";
-import axios from "axios";
-import fetch from "node-fetch";
-import "dotenv/config"; // loads env variables from .env file
-const app = express();
-
-
-const { 3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3, FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3 } = process.env;
 'use strict';
 var util = require('util');
 
@@ -98,32 +90,29 @@ exports.execute = function (req, res) {
 
     console.log("5 -- For Execute");	
     console.log("4");	
-    console.log("3");	
-    console.log("2");	
-    console.log("1");	
     //console.log("Executed: "+req.body.inArguments[0]);
-    
-    base = "https://login.salesforce.com";
-	const response = await fetch(base + "/services/oauth2/token", {
-    method: "post",
-    body: "grant_type=password",
-		"client_id= 3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3",
-		"client_secret= FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3",
-		"username= rehan@mansoori.com",
-		"password = 785392more",
-    headers: {
-      Authorization:
-        "Basic " + Buffer.from(3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3 + ":" + FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3).toString("base64"),
-    },
-  });
-  const data = await response.json();
-
-    console.log(data);
-    // FOR TESTING
-    logData(req);
-    //res.send(200, 'Publish');
-    res.send({"access_token" : data})
+	
+	var request = require('request');
+	var options = {
+  'method': 'POST',
+  'url': 'https://login.salesforce.com/services/oauth2/token',
+  'headers': {
+    'Content-Type': 'application/json',
+    'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:0; LSKey-c$CookieConsentPolicy=0:0'
+  },
+  formData: {
+    'client_id': '3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3',
+    'client_secret': 'FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3',
+    'grant_type': 'password ',
+    'username': 'rehan@mansoori.com',
+    'password': '785392more'
+  }
 };
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+}
 
 
 /*
