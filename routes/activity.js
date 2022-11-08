@@ -5,7 +5,6 @@ import "dotenv/config"; // loads env variables from .env file
 const app = express();
 
 
-const { 3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3, FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3 } = process.env;
 'use strict';
 var util = require('util');
 
@@ -110,10 +109,10 @@ exports.execute = function (req, res) {
 		"client_id= 3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3",
 		"client_secret= FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3",
 		"username= rehan@mansoori.com",
-		"password = 785392more",
+		"password = 785392more"
     headers: {
       Authorization:
-        "Basic " + Buffer.from(3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3 + ":" + FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3).toString("base64"),
+        "Basic " + Buffer.from("3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3 + ":" + FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3).toString("base64"),
     },
   });
   const data = await response.json();
