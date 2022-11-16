@@ -17,8 +17,7 @@
         "execute": {
             "inArguments": [
                 {
-                  "email": "test@gmail.com",
-                  "to": "8384920507" 
+                   
                 }               
             ],
             "outArguments": [

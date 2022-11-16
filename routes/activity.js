@@ -90,6 +90,14 @@ exports.execute = function (req, res) {
 
     console.log("5 -- For Execute");	
     console.log("4");
+ 
+    var RequestBody = JSON.stringify(req.body);
+    var  jsonRequestBody = JSON.parse(RequestBody);
+      console.log( "jsonRequestBody is:::  ",  jsonRequestBody.inArguments[0]);
+	  var email  = jsonRequestBody.inArguments[0].email;
+	  var Phone  = jsonRequestBody.inArguments[0].to; 
+    console.log( "email is "+  email);	
+	console.log( "phone is "+  Phone);	
     
     var request = require('request');
     var options = {
