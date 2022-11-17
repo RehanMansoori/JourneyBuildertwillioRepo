@@ -61,7 +61,6 @@ exports.edit = function (req, res) {
     
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    logData(req);
     res.send(200, 'Edit');
 };
 
@@ -78,8 +77,7 @@ exports.save = function (req, res) {
     //console.log("Saved: "+req.body.inArguments[0]);
     
     // Data from the req and put it in an array accessible to the main app.
-    console.log( req.body );
-    logData(req);
+    console.log(req.body);
     res.send(200, 'Save');
 };
 
@@ -142,7 +140,6 @@ exports.publish = function (req, res) {
     
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-   logData(req);
    res.send(200, 'Publish');
    
 };
@@ -161,6 +158,5 @@ exports.validate = function (req, res) {
     
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    logData(req);
     res.send(200, 'Validate');
 };
