@@ -62,9 +62,9 @@ define([
                     $('#messagingService').val(val);
                 }
 
-                if (key === 'body') {
+               /* if (key === 'body') {
                     $('#messageBody').val(val);
-                }                                                               
+                } */                                                         
 
             })
         });
