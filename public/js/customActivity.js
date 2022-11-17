@@ -50,7 +50,7 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'accountSid') {
+                /*if (key === 'accountSid') {
                     $('#accountSID').val(val);
                 }
 
@@ -66,7 +66,7 @@ define([
                     $('#messageBody').val(val);
                 }                                                               
 
-            })
+            })*/
         });
 
         connection.trigger('updateButton', {
