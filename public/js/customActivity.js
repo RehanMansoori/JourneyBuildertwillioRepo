@@ -50,7 +50,7 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'id') {
+                if (key === 'not') {
                     $('#accountSID').val(val);
                 }
 
