@@ -50,7 +50,7 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'accountSid') {
+                if (key === 'id') {
                     $('#accountSID').val(val);
                 }
 
@@ -90,13 +90,13 @@ define([
 
     function save() {
 
-        var accountSid = $('#accountSID').val();
+        var id = $('#accountSID').val();
         var authToken = $('#authToken').val();
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
 
         payload['arguments'].execute.inArguments = [{
-            "accountSid": accountSid,
+            "id": id,
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
