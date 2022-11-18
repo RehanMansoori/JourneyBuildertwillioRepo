@@ -90,7 +90,7 @@ define([
 
     function save() {
 
-        var mainId = $('#accountSID').val();
+        var id = $('#accountSID').val();
         var authToken = $('#authToken').val();
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
