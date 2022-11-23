@@ -50,7 +50,7 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'id') {
+                if (key === 'email') {
                     $('#email').val(val);
                 }                                           
             })
@@ -77,16 +77,19 @@ define([
 
     function save() {
 
-        var id = $('#email').val();
-
+        var email = $('#email').val();
+        console.log(email);
         payload['arguments'].execute.inArguments = [{
-            "id": id
+            "email": email
         }];
 
         payload['metaData'].isConfigured = true;
 
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
+        if(email == ''){
+			alert('email field cannot be empty');
+		}
 
     }                    
 

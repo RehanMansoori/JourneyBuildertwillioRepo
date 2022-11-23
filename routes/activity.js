@@ -93,7 +93,7 @@ exports.execute = function (req, res) {
 	  var email  = jsonRequestBody.inArguments[0].id;
     console.log('email is = '+email);
     
-    var request = require('request');
+    /*var request = require('request');
     var options = {
       'method': 'POST',
       'url': 'https://login.salesforce.com/services/oauth2/token',
@@ -118,8 +118,8 @@ exports.execute = function (req, res) {
       //var x=10;
       //res.send(200,access_token);
     });
-    var request = require('request');
-    var options1 = {
+    var accrequest = require('request');
+    var accoptions = {
   'method': 'GET',
   'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v48.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
   'headers': {
@@ -127,10 +127,12 @@ exports.execute = function (req, res) {
     'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
   }
 };
-request(options1, function (error, response) {
+accrequest(accoptions, function (error, response1) {
   if (error) throw new Error(error);
-  console.log(response.body);
-});
+  //console.log(response1.body);
+  var body1 = JSON.parse(response1.body);
+  console.log(body1);
+});*/
 
 };
 
