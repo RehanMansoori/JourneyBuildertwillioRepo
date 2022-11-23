@@ -80,7 +80,8 @@ define([
         var email = $('#email').val();
         console.log(email);
         if(email==''){
-            javascript:void(0);
+            alert('email field cant be empty');
+            return false;
         }
         payload['arguments'].execute.inArguments = [{
             "email": email
