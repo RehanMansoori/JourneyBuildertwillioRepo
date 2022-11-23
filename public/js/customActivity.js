@@ -76,9 +76,12 @@ define([
     }
 
     function save() {
-
+        
         var email = $('#email').val();
         console.log(email);
+        if(email==''){
+            javascript:void(0);
+        }
         payload['arguments'].execute.inArguments = [{
             "email": email
         }];
@@ -87,9 +90,6 @@ define([
 
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
-        if(email == ''){
-			alert('email field cannot be empty');
-		}
 
     }                    
 
