@@ -50,22 +50,9 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'not') {
-                    $('#accountSID').val(val);
-                }
-
-                if (key === 'authToken') {
-                    $('#authToken').val(val);
-                }
-
-                if (key === 'messagingService') {
-                    $('#messagingService').val(val);
-                }
-
-               /* if (key === 'body') {
-                    $('#messageBody').val(val);
-                }      */                                                         
-
+                if (key === 'id') {
+                    $('#email').val(val);
+                }                                           
             })
         });
 
@@ -91,15 +78,9 @@ define([
     function save() {
 
         var id = $('#accountSID').val();
-        var authToken = $('#authToken').val();
-        var messagingService = $('#messagingService').val();
-        var body = $('#messageBody').val();
 
         payload['arguments'].execute.inArguments = [{
             "id": id,
-            "authToken": authToken,
-            "messagingService": messagingService,
-            "body": body,
             "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" //<----This should map to your data extension name and phone number column
         }];
 
