@@ -77,7 +77,7 @@ define([
 
     function save() {
 
-        var id = $('#accountSID').val();
+        var id = $('#email').val();
 
         payload['arguments'].execute.inArguments = [{
             "id": id,
