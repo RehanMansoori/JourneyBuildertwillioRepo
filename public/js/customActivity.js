@@ -89,7 +89,6 @@ define([
         connection.trigger('updateActivity', payload);
         if(email == ''){
 			alert('email field cannot be empty');
-            return 
 		}
 
     }                    
