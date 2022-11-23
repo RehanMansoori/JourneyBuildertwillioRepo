@@ -116,8 +116,21 @@ exports.execute = function (req, res) {
      var access_token = obj.access_token;
         console.log('access token '+access_token);
       //var x=10;
-      res.send(200,access_token);
+      //res.send(200,access_token);
     });
+    var request = require('request');
+    var options1 = {
+  'method': 'GET',
+  'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v48.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
+  'headers': {
+    'Authorization': 'Bearer 00D2w000001dp3a!AQIAQOrgB3Y6nDfhnZa.AelVSWMZz6x0VEUFChpXB4I2dphXzNUMofNFfsMrS8LIRnFwCqQN1T68tU6VD5mXy5Dk8YilREiC',
+    'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
+  }
+};
+request(options1, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
 
 };
 
