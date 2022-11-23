@@ -80,8 +80,7 @@ define([
         var id = $('#email').val();
 
         payload['arguments'].execute.inArguments = [{
-            "id": id,
-            "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" //<----This should map to your data extension name and phone number column
+            "id": id
         }];
 
         payload['metaData'].isConfigured = true;

@@ -71,9 +71,6 @@ exports.save = function (req, res) {
     
     console.log("5 -- For Save");	
     console.log("4");	
-    console.log("3");	
-    console.log("2");	
-    console.log("1");	
     //console.log("Saved: "+req.body.inArguments[0]);
     
     // Data from the req and put it in an array accessible to the main app.
@@ -93,11 +90,9 @@ exports.execute = function (req, res) {
     var  jsonRequestBody = JSON.parse(RequestBody);
       console.log( "jsonRequestBody is:::  ",  jsonRequestBody.inArguments[0]);
 	  var email  = jsonRequestBody.inArguments[0].email;
-	  var Phone  = jsonRequestBody.inArguments[0].to; 
-    console.log( "email is "+  email);	
-	console.log( "phone is "+  Phone);	
+    console.log('email is = '+email);
     
-    var request = require('request');
+    /*var request = require('request');
     var options = {
       'method': 'POST',
       'url': 'https://login.salesforce.com/services/oauth2/token',
@@ -122,7 +117,7 @@ exports.execute = function (req, res) {
         console.log('access token '+access_token);
       //var x=10;
       res.send(200,access_token);
-    });
+    });*/
 };
 
 
@@ -133,9 +128,6 @@ exports.publish = function (req, res) {
 
     console.log("5 -- For Publish");	
     console.log("4");	
-    console.log("3");	
-    console.log("2");	
-    console.log("1");	
     //console.log("Published: "+req.body.inArguments[0]);        
     
     // Data from the req and put it in an array accessible to the main app.
@@ -150,10 +142,7 @@ exports.publish = function (req, res) {
 exports.validate = function (req, res) {
 
     console.log("5 -- For Validate");	
-    console.log("4");	
-    console.log("3");	
-    console.log("2");	
-    console.log("1");	
+    console.log("4");		
     //console.log("Validated: "+req.body.inArguments[0]);       
     
     // Data from the req and put it in an array accessible to the main app.
