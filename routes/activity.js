@@ -89,7 +89,7 @@ exports.execute = function (req, res) {
     var RequestBody = JSON.stringify(req.body);
     var  jsonRequestBody = JSON.parse(RequestBody);
       console.log( "jsonRequestBody is:::  ",  jsonRequestBody.inArguments[0]);
-	  var email  = jsonRequestBody.inArguments[0].email;
+	  var email  = jsonRequestBody.inArguments[0].id;
     console.log('email is = '+email);
     
     /*var request = require('request');
