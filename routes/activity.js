@@ -125,7 +125,7 @@ exports.execute = function (req, res) {
   'method': 'GET',
   'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v48.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
   'headers': {
-    'Authorization': 'Bearer '+access_token,
+    'Authorization': 'Bearer '+obj.access_token,
     'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
   }
 };
