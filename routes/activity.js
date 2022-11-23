@@ -113,26 +113,11 @@ exports.execute = function (req, res) {
       if (error) throw new Error(error);
       console.log(response.body);
       const obj = JSON.parse(response.body);
-      console.log(obj.access_token);
      var access_token = obj.access_token;
         console.log('access token '+access_token);
       //var x=10;
       res.send(200,access_token);
     });
-
-    var request = require('request');
-    var options = {
-  'method': 'GET',
-  'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v48.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
-  'headers': {
-    'Authorization': 'Bearer '+obj.access_token,
-    'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
-  }
-};
-request(options, function (error, response) {
-  if (error) throw new Error(error);
-  console.log(response.body);
-});
 
 };
 
