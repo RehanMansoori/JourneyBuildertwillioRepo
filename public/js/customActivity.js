@@ -81,6 +81,7 @@ define([
         console.log(email);
         if(email==''){
             alert('email field cant be empty');
+            spinner.stop(true);
             return false;
         }
         payload['arguments'].execute.inArguments = [{
