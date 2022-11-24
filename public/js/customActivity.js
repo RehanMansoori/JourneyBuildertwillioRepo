@@ -82,7 +82,8 @@ define([
         if(email==''){ 
             alert('email field cant be empty');
             document.getElementById('email').style.border= "2px solid red";
-            return false;
+            preventDefault();
+           // return false;
         }
         payload['arguments'].execute.inArguments = [{
             "email": email
