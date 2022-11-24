@@ -79,9 +79,9 @@ define([
         
         var email = $('#email').val();
         console.log(email);
-        if(email==''){
+        if(email==''){ 
             alert('email field cant be empty');
-            document.getElementById('email').style.border= "thick solid #0000FF";
+            document.getElementById('email').style.border= "2px solid red";
             return false;
         }
         payload['arguments'].execute.inArguments = [{
