@@ -82,8 +82,10 @@ define([
         if(email==''){ 
             alert('email field cant be empty');
             document.getElementById('email').style.border= "2px solid red";
-            //$(window).ready(onRender);
+            document.getElementsByClassName('loader')[1].style.display = 'none';
+            document.getElementsByClassName('loader-overlay').style.display = 'none';
             preventDefault();
+            //spinner.remove();
            // return false;
         }
         payload['arguments'].execute.inArguments = [{
