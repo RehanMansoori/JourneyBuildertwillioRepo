@@ -79,7 +79,7 @@ define([
 		var email = $('#email').val(); 
 		
 		payload['arguments'].execute.inArguments = [{ 
-			"email": email			
+			"email": email	
         }];
 
         payload['metaData'].isConfigured = true;
