@@ -118,12 +118,12 @@ exports.execute = function (req, res) {
       //var x=10;
       //res.send(200,access_token);
     });
-    var accrequest = require('request');
-    var accoptions = {
+    //var accrequest = require('request');
+    /*var accoptions = {
   'method': 'GET',
   'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v48.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
   'headers': {
-    'Authorization': 'Bearer 00D2w000001dp3a!AQIAQOrgB3Y6nDfhnZa.AelVSWMZz6x0VEUFChpXB4I2dphXzNUMofNFfsMrS8LIRnFwCqQN1T68tU6VD5mXy5Dk8YilREiC',
+    'Authorization': 'Bearer 00',
     'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
   }
 };
@@ -132,7 +132,7 @@ accrequest(accoptions, function (error, response1) {
   //console.log(response1.body);
   var body1 = JSON.parse(response1.body);
   console.log(body1);
-});
+});*/
 
 };
 
