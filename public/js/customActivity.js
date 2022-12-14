@@ -76,11 +76,10 @@ define([
     }
 
     function save() {
-        
-        var email = $('#email').val();
-        console.log(email);
-        payload['arguments'].execute.inArguments = [{
-            "email": email
+		var email = $('#email').val(); 
+		
+		payload['arguments'].execute.inArguments = [{ 
+			"email": email			
         }];
 
         payload['metaData'].isConfigured = true;
