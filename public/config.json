@@ -93,7 +93,7 @@
                 ],
                 "outArguments": [
 				{
-                        "access_token": {
+                        "status": {
                             "dataType": "Text",
                             "direction": "out",
                             "access": "visible"
