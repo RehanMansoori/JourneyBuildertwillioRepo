@@ -84,7 +84,7 @@ define([
             //document.getElementById('email').style.border= "2px solid red";
             //document.getElementsByClassName('loader')[1].style.display = 'none';
             //document.getElementsByClassName('loader-overlay')[0].style.display ='none';
-            preventDefault();
+            //preventDefault();
             //spinner.remove();
            // return false;
         }

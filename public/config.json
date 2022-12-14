@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "Twilio SMS New",
+           "name": "Salesforce CustomActivity",
            "description": "Send Twilio SMS with Journey Builder",
            "TwilioMessage":"test"
        }
@@ -21,9 +21,9 @@
                 }               
             ],
             "outArguments": [
-		    {
-                "status": "{{Interaction.REST-1.access_token}}"
-            }   
+		 {
+                "access_token": "{{Interaction.REST-1.access_token}}"
+             } 
 
 		],
             "url": "https://twilio-applica.herokuapp.com/journeybuilder/execute",
@@ -93,7 +93,7 @@
                 ],
                 "outArguments": [
 				{
-                        "status": {
+                        "access_token": {
                             "dataType": "Text",
                             "direction": "out",
                             "access": "visible"
