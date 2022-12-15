@@ -92,7 +92,7 @@ exports.execute = function (req, res) {
       var clientId = '3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3'; 
       var clinetsecret = 'FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3';
       var accesstokenURL = 'https://login.salesforce.com/services/oauth2/token';
-      //var endPointURL = 'https://app-eu.onetrust.com/api/consentmanager/v1/datasubjects/profiles';
+      var endPointURL = 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP';
       var email  = jsonRequestBody.inArguments[0].email;
       console.log( "email value is "+  email);	
 
@@ -114,6 +114,24 @@ exports.execute = function (req, res) {
 request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
+  // Actual request start from here
+  var accrequest = require('request');
+  var accoptions = {
+    'method': 'GET',
+    'url': endPointURL,
+    'headers': {
+    'identifier': Email,
+    'Authorization': 'Bearer '+body.access_token
+    },
+    formData: {
+
+    }
+  };
+  accrequest(accoptions, function (error, response1) {
+    if (error) throw new Error(error);
+    console.log(response1.body);
+  });
+
 });
 
 
