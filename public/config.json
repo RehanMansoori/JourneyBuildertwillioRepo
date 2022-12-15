@@ -23,10 +23,10 @@
             "outArguments": [
 		    {
                 
-            } 
+             } 
 
 		],
-            "url": "https://twilio-applica.herokuapp.com/journeybuilder/execute",
+            "url": "https://customactivity.onrender.com/journeybuilder/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -35,9 +35,9 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "5a2e916c-27b0-4079-b498-846ac48f9b67",
+      "applicationExtensionKey": "",
        "save": {
-           "url": "https://twilio-applica.herokuapp.com/journeybuilder/save",
+           "url": "https://customactivity.onrender.com/journeybuilder/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -45,7 +45,7 @@
             "timeout": 2000
        },
        "publish": {
-           "url": "https://twilio-applica.herokuapp.com/journeybuilder/publish",
+           "url": "https://customactivity.onrender.com/journeybuilder/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -53,7 +53,7 @@
             "timeout": 2000
        },
        "validate": {
-           "url": "https://twilio-applica.herokuapp.com/journeybuilder/validate",
+           "url": "https://customactivity.onrender.com/journeybuilder/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -61,7 +61,7 @@
             "timeout": 2000
        },
        "stop": {
-           "url": "https://twilio-applica.herokuapp.com/journeybuilder/stop",
+           "url": "https://customactivity.onrender.com/journeybuilder/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -93,7 +93,6 @@
                 ],
                 "outArguments": [
 				{
-                        
                 }
 			]
             }
