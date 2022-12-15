@@ -83,7 +83,7 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
 
-    console.log("5 -- For Execute");	
+   /* console.log("5 -- For Execute");	
     console.log("4");
     var client_id ='3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3';
     var client_secret ='FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3';
@@ -117,22 +117,8 @@ exports.execute = function (req, res) {
         console.log('access token '+access_token);
       //var x=10;
       res.send(200,access_token);
-    });
-    //var accrequest = require('request');
-    /*var accoptions = {
-  'method': 'GET',
-  'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v48.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
-  'headers': {
-    'Authorization': 'Bearer 00',
-    'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
-  }
-};
-accrequest(accoptions, function (error, response1) {
-  if (error) throw new Error(error);
-  //console.log(response1.body);
-  var body1 = JSON.parse(response1.body);
-  console.log(body1);
-});*/
+    });*/
+    res.send(200, 'execute');
 
 };
 
