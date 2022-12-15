@@ -115,22 +115,19 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
   // Actual request start from here
-  var accrequest = require('request');
-  var accoptions = {
-    'method': 'GET',
-    'url': endPointURL,
-    'headers': {
-    'identifier': Email,
-    'Authorization': 'Bearer '+body.access_token
-    },
-    formData: {
-
-    }
-  };
-  accrequest(accoptions, function (error, response1) {
-    if (error) throw new Error(error);
-    console.log(response1.body);
-  });
+  var request = require('request');
+	var options = {
+  'method': 'GET',
+  'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
+  'headers': {
+    'Authorization': 'Bearer '+body.access_token,
+    'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
+  }
+};
+accrequest(accoptions, function (error, response1) {
+  if (error) throw new Error(error);
+  console.log(response1.body);
+});
 
 });
 
