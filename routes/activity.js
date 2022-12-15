@@ -83,7 +83,7 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
 
-   /* console.log("5 -- For Execute");	
+    console.log("5 -- For Execute");	
     console.log("4");
     var client_id ='3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3';
     var client_secret ='FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3';
@@ -117,8 +117,8 @@ exports.execute = function (req, res) {
         console.log('access token '+access_token);
       //var x=10;
       res.send(200,access_token);
-    });*/
-    res.send(200, 'execute');
+    });
+    //res.send(200, 'execute');
 
 };
 
