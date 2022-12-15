@@ -85,7 +85,7 @@ exports.execute = function (req, res) {
 
     console.log("5 -- For Execute");	
     console.log("4");
-    /*var client_id ='3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3';
+    var client_id ='3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3';
     var client_secret ='FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3';
     var RequestBody = JSON.stringify(req.body);
     var  jsonRequestBody = JSON.parse(RequestBody);
@@ -106,7 +106,7 @@ exports.execute = function (req, res) {
         'client_secret': client_secret,
         'grant_type': 'password ',
         'username': 'rehan@mansoori.com',
-        'password': '785392more'
+        'password': '785392resh'
       }
     };
     request(options, function (error, response) {
@@ -133,7 +133,6 @@ accrequest(accoptions, function (error, response1) {
   var body1 = JSON.parse(response1.body);
   console.log(body1);
 });*/
-res.send('status':'accesstoken');
 
 };
 
