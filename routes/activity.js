@@ -114,6 +114,8 @@ exports.execute = function (req, res) {
 request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
+  var body = JSON.parse(response.body);
+
   // Actual request start from here
   var request = require('request');
 	var options = {
@@ -124,7 +126,7 @@ request(options, function (error, response) {
     'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
   }
 };
-accrequest(accoptions, function (error, response1) {
+  request(options, function (error, response1) {
   if (error) throw new Error(error);
   console.log(response1.body);
 });
