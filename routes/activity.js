@@ -131,6 +131,10 @@ request(options, function (error, response) {
   console.log(response1.body);
   var body1 = JSON.parse(response1.body);
   console.log(body1);
+  console.log(body1.email);
+  if(email == 'rehan@briskminds.com'){
+    res.send({"status" : "true"});
+  }
 
 });
 

@@ -22,7 +22,7 @@
             ],
             "outArguments": [
 		    {
-                
+                "status": "{{Interaction.REST-1.status}}"
              } 
 
 		],
@@ -93,6 +93,11 @@
                 ],
                 "outArguments": [
 				{
+                    "status": {
+                        "dataType": "Text",
+                        "direction": "out",
+                        "access": "visible"
+                    }
                 }
 			]
             }
