@@ -126,19 +126,11 @@ request(options, function (error, response) {
     'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
   }
 };
-  request(options, function (error, response1) {
+  accrequest(accoptions, function (error, response1) {
   if (error) throw new Error(error);
-  console.log('responsebody*----- ', response1.body);
-  console.log('attributes*----- ', response1.body.attributes);  
-  console.log('Email*----- ', response1.body.attributes[0].Email);
   var body1 = JSON.parse(response1.body);
-  console.log("body is = ", body1.attributes[0]);
-  console.log('email is*---- ', body1.attributes[0].Email);
-  //console.log("Email is = "+body1.content[0].email);
-  //console.log(body1.email);
-  /*if(email == 'rehan@briskminds.com'){
-    res.send({"status" : "true"});
-  }*/
+  console.log('body is', body1);
+    
 });
 });
 
