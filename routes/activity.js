@@ -130,12 +130,12 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response1.body);
   var body1 = JSON.parse(response1.body);
-  console.log("body is = "+body1.email);
+  console.log("body is = "+body1.attributes.Email);
   //console.log("Email is = "+body1.content[0].email);
   //console.log(body1.email);
-  if(email == 'rehan@briskminds.com'){
+  /*if(email == 'rehan@briskminds.com'){
     res.send({"status" : "true"});
-  }
+  }*/
 });
 });
 
