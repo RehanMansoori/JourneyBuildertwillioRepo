@@ -117,8 +117,8 @@ request(options, function (error, response) {
   var body = JSON.parse(response.body);
 
   // Actual request start from here
-  var request = require('request');
-	var options = {
+  var accrequest = require('request');
+	var accoptions = {
   'method': 'GET',
   'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c,Email',
   'headers': {
