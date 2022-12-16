@@ -130,6 +130,7 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   var body1 = JSON.parse(response1.body);
   console.log('body is', body1);
+  console.log(body1.email);
     
 });
 });
