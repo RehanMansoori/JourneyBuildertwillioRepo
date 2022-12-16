@@ -120,7 +120,7 @@ request(options, function (error, response) {
   var request = require('request');
 	var options = {
   'method': 'GET',
-  'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
+  'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c,Email',
   'headers': {
     'Authorization': 'Bearer '+body.access_token,
     'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
@@ -129,6 +129,9 @@ request(options, function (error, response) {
   request(options, function (error, response1) {
   if (error) throw new Error(error);
   console.log(response1.body);
+  var body1 = JSON.parse(response1.body);
+  console.log(body1);
+
 });
 
 });
