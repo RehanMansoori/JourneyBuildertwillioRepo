@@ -87,9 +87,9 @@ exports.execute = function (req, res) {
 
     console.log("5 -- For Execute");	
     console.log("4");
-    var RequestBody = JSON.stringify(req.body);
+    /*var RequestBody = JSON.stringify(req.body);
       var  jsonRequestBody = JSON.parse(RequestBody);
-      console.log( "jsonRequestBody is:::  ",  jsonRequestBody.inArguments[0] );
+      console.log( "jsonRequestBody is:::  ",  jsonRequestBody.inArguments[0]);
       
       var clientId = '3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3'; 
       var clinetsecret = 'FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3';
@@ -135,8 +135,8 @@ request(options, function (error, response) {
   //console.log('email is = ',body1.email);
   res.send({"status" : "true"});
 });
-});
-
+});*/
+res.send({"status" : "true"});
 
 };
 
