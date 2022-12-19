@@ -87,7 +87,7 @@ exports.execute = function (req, res) {
 
     console.log("5 -- For Execute");	
     console.log("4");
-    /*var RequestBody = JSON.stringify(req.body);
+    var RequestBody = JSON.stringify(req.body);
       var  jsonRequestBody = JSON.parse(RequestBody);
       console.log( "jsonRequestBody is:::  ",  jsonRequestBody.inArguments[0]);
       
@@ -133,10 +133,11 @@ request(options, function (error, response) {
   var body1 = JSON.parse(response1.body);
   console.log('body is', body1);
   //console.log('email is = ',body1.email);
-  res.send({"status" : "true"});
+  //res.send({"status" : "true"});
 });
-});*/
 res.send({"status" : "true"});
+});
+
 
 };
 
