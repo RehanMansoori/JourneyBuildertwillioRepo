@@ -61,7 +61,8 @@ exports.edit = function (req, res) {
     
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    res.send(200, 'Edit');
+    //res.send(200, 'Edit');
+    res.send({"status" : "true"});
 };
 
 /*
@@ -75,7 +76,8 @@ exports.save = function (req, res) {
     
     // Data from the req and put it in an array accessible to the main app.
     console.log(req.body);
-    res.send(200, 'Save');
+    //res.send(200, 'Save');
+    res.send({"status" : "true"});
 };
 
 /*
@@ -130,8 +132,8 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   var body1 = JSON.parse(response1.body);
   console.log('body is', body1);
-  console.log('email is = ',body1.email);
-    
+  //console.log('email is = ',body1.email);
+  res.send({"status" : "true"});
 });
 });
 
@@ -150,7 +152,8 @@ exports.publish = function (req, res) {
     
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-   res.send(200, 'Publish');
+   //res.send(200, 'Publish');
+   res.send({"status" : "true"});
    
 };
 
@@ -165,5 +168,6 @@ exports.validate = function (req, res) {
     
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    res.send(200, 'Validate');
+    //res.send(200, 'Validate');
+    res.send({"status" : "true"});
 };
