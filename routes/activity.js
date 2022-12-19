@@ -118,7 +118,6 @@ request(options, function (error, response) {
   console.log(response.body);
   var body = JSON.parse(response.body);
 
-  // Actual request start from here
   var accrequest = require('request');
 	var accoptions = {
   'method': 'GET',
@@ -132,10 +131,7 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   var body1 = JSON.parse(response1.body);
   console.log('body is', body1);
-  var obj = body1[0];
-  console.log('object is = ',obj);
-  var email = obj.Email
-  console.log('email is =',email );
+  console.log('email is = ',body1.isEmailActive__c);
 });
 
 //res.send({"status" : "true"});
