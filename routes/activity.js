@@ -140,14 +140,15 @@ request(options, function (error, response) {
        isActive ='false';
     }
 });
-  if(isActive == 'true'){
-    res.send({"status" : "true"});
-  }
-  if(isActive == 'false'){
-    res.send({"status" : "false"});
-  }
 });
-
+if(isActive == 'true'){
+  console.log("-------------------true----------------");
+  res.send({"status" : "true"});
+}
+if(isActive == 'false'){
+  console.log("-------------------false----------------");
+  res.send({"status" : "false"});
+}
 
 };
 
