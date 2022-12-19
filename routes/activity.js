@@ -97,7 +97,7 @@ exports.execute = function (req, res) {
       var endPointURL = 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP';
       var email  = jsonRequestBody.inArguments[0].email;
       console.log( "email value is "+  email);	
-      var isActive = '';
+
       var request = require('request');
       var options = {
       'method': 'POST',
@@ -117,6 +117,7 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
   var body = JSON.parse(response.body);
+  var isActive = '';
   var accrequest = require('request');
 	var accoptions = {
   'method': 'GET',
@@ -139,7 +140,6 @@ request(options, function (error, response) {
        isActive ='false';
     }
 });
-});
 if(isActive == 'true'){
   console.log("-------------------true----------------");
   res.send({"status" : "true"});
@@ -148,6 +148,8 @@ if(isActive == 'false'){
   console.log("-------------------false----------------");
   res.send({"status" : "false"});
 }
+});
+
 
 };
 
