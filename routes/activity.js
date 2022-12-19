@@ -132,9 +132,10 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   var body1 = JSON.parse(response1.body);
   console.log('body is', body1);
-  console.log('length is  = ',body1.content.length);
-  //console.log('email is = ',body1.email);
-  //res.send({"status" : "true"});
+  var obj = body1[0];
+  console.log('object is = ',obj);
+  var email = obj.Email
+  console.log('email is =',email );
 });
 
 //res.send({"status" : "true"});
