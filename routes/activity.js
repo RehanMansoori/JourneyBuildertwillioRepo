@@ -129,25 +129,25 @@ exports.execute = function (req, res) {
       };
       accrequest(accoptions, function (error, response1) {
       if (error) throw new Error(error);
-    var body1 = JSON.parse(response1.body);
-    console.log('body is', body1);
-    console.log('email is = ',body1.isEmailActive__c);
-    var checkEmail = body1.isEmailActive__c;
-      if(checkEmail == 'true'){
-         isActive = true;
-      }
-      if(checkEmail =='false'){
-         isActive ='false';
-      }
-  });
-if(isActive == 'true'){
-  console.log("-------------------true----------------");
-  res.send({"status" : "true"});
-}
-if(isActive == 'false'){
-  console.log("-------------------false----------------");
-  res.send({"status" : "false"});
-}
+      var body1 = JSON.parse(response1.body);
+      console.log('body is', body1);
+      console.log('email is = ',body1.isEmailActive__c);
+      var checkEmail = body1.isEmailActive__c;
+        if(checkEmail == 'true'){
+           isActive = true;
+        }
+        if(checkEmail =='false'){
+          isActive ='false';
+        }
+        if(isActive == 'true'){
+          console.log("-------------------true----------------");
+          res.send({"status" : "true"});
+        }
+        if(isActive == 'false'){
+          console.log("-------------------false----------------");
+          res.send({"status" : "false"});
+        }
+    });
 });
 
 
