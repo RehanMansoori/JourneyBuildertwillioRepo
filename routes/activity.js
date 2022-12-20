@@ -99,55 +99,48 @@ exports.execute = function (req, res) {
       console.log( "email value is "+  email);	
 
       var request = require('request');
-      var options = { 
-        'method': 'POST',
-        'url': accesstokenURL,
-        'headers': {
-            'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:0; LSKey-c$CookieConsentPolicy=0:0'
-          },
-         formData: {
-          'client_id': clientId,
-          'client_secret': clinetsecret,
-          'grant_type': 'password',
-          'username': 'rehan@mansoori.com',
-          'password': '785392resh'
-          }
-        };
-        request(options, function (error, response) {
-        if (error) throw new Error(error);
-        console.log(response.body);
-        var body = JSON.parse(response.body);
-        var isActive = '';
-        var accrequest = require('request');
-	      var accoptions = {
-          'method': 'GET',
-          'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c,Email',
-          'headers': {
-            'Authorization': 'Bearer '+body.access_token,
-            'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
-          }
-      };
-      accrequest(accoptions, function (error, response1) {
-      if (error) throw new Error(error);
-      var body1 = JSON.parse(response1.body);
-      console.log('body is', body1);
-      console.log('email is = ',body1.isEmailActive__c);
-      var checkEmail = body1.isEmailActive__c;
-        if(checkEmail == 'true'){
-           isActive = true;
-        }
-        if(checkEmail =='false'){
-          isActive ='false';
-        }
-        if(isActive == 'true'){
-          console.log("-------------------true----------------");
-          res.send({"status" : "true"});
-        }
-        if(isActive == 'false'){
-          console.log("-------------------false----------------");
-          res.send({"status" : "false"});
-        }
-    });
+      var options = {
+      'method': 'POST',
+      'url': accesstokenURL,
+    'headers': {
+      'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:0; LSKey-c$CookieConsentPolicy=0:0'
+    },
+    formData: {
+      'client_id': clientId,
+      'client_secret': clinetsecret,
+      'grant_type': 'password',
+      'username': 'rehan@mansoori.com',
+      'password': '785392resh'
+  }
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+  var body = JSON.parse(response.body);
+  var isActive = '';
+  var accrequest = require('request');
+	var accoptions = {
+  'method': 'GET',
+  'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c,Email',
+  'headers': {
+    'Authorization': 'Bearer '+body.access_token,
+    'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
+  }
+};
+  accrequest(accoptions, function (error, response1) {
+  if (error) throw new Error(error);
+  var body1 = JSON.parse(response1.body);
+  console.log('body is', body1);
+  console.log('email is = ',body1.isEmailActive__c);
+  var checkEmail = body1.isEmailActive__c;
+    if(checkEmail == 'true'){
+      res.send({"status" : "true"}); 
+    }
+    if(checkEmail =='false'){
+       isActive ='false';
+    }
+});
+//res.send({"status" : "true"});
 });
 
 
