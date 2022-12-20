@@ -87,55 +87,59 @@ exports.execute = function (req, res) {
 
     console.log("5 -- For Execute");	
     var RequestBody = JSON.stringify(req.body);
-      var  jsonRequestBody = JSON.parse(RequestBody);
-      console.log( "jsonRequestBody is:::  ",  jsonRequestBody.inArguments[0]);
-      
-      var clientId = '3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3'; 
-      var clinetsecret = 'FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3';
-      var accesstokenURL = 'https://login.salesforce.com/services/oauth2/token';
-      var endPointURL = 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP';
-      var email  = jsonRequestBody.inArguments[0].email;
-      console.log( "email value is "+  email);	
+    var  jsonRequestBody = JSON.parse(RequestBody);
+    console.log( "jsonRequestBody is:::  ",  jsonRequestBody.inArguments[0]);
+    var clientId = '3MVG9n_HvETGhr3BTx_IIe00PIjo01Q79Srg0EYI1npGcSgwizYCv9xQgaDdIX2eo593elKpWzc6T4DwCJCQ3'; 
+    var clinetsecret = 'FA19B10545EDFBC7BD2EFCF2BDDA570D732E14E03B9CF9026202D8CAE17C19F3';
+    var accesstokenURL = 'https://login.salesforce.com/services/oauth2/token';
+    var endPointURL = 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP';
+    var email  = jsonRequestBody.inArguments[0].email;
+    console.log( "email value is "+ email);
 
       var request = require('request');
       var options = {
-      'method': 'POST',
-      'url': accesstokenURL,
-    'headers': {
-      'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:0; LSKey-c$CookieConsentPolicy=0:0'
-    },
-    formData: {
-      'client_id': clientId,
-      'client_secret': clinetsecret,
-      'grant_type': 'password',
-      'username': 'rehan@mansoori.com',
-      'password': '785392resh'
-  }
-};
-request(options, function (error, response) {
-  if (error) throw new Error(error);
-  console.log(response.body);
-  var body = JSON.parse(response.body);
+        'method': 'POST',
+        'url': accesstokenURL,
+        'headers': {
+          'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:0; LSKey-c$CookieConsentPolicy=0:0'
+        },
+        formData: {
+          'client_id': clientId,
+          'client_secret': clinetsecret,
+          'grant_type': 'password',
+          'username': 'rehan@mansoori.com',
+          'password': '785392resh'
+        }
+      };
+      request(options, function (error, response) {
+        if (error) throw new Error(error);
+        console.log(response.body);
+        var body = JSON.parse(response.body);
 
-  // Actual request start from here
-  var accrequest = require('request');
-	var accoptions = {
-  'method': 'GET',
-  'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c,Email',
-  'headers': {
-    'Authorization': 'Bearer '+body.access_token,
-    'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
+        // Actual request start from here
+        var accrequest = require('request');
+	      var accoptions = {
+            'method': 'GET',
+            'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c,Email',
+            'headers': {
+            'Authorization': 'Bearer '+body.access_token,
+            'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
+          }
+      };
+      accrequest(accoptions, function (error, response1) {
+        if (error) throw new Error(error);
+        var body1 = JSON.parse(response1.body);
+        console.log('body is', body1);
+        //console.log('email is = ',body1.email);
+        //res.send({"status" : "true"});
+        //res.send({"status" : "true"});
+        console.log('status is = ',body1.isEmailActive__c);
+        var ischeck  = body1.isEmailActive__c;
+      });
+  });
+  if(ischeck){
+    res.send({"status" : "true"});
   }
-};
-  accrequest(accoptions, function (error, response1) {
-  if (error) throw new Error(error);
-  var body1 = JSON.parse(response1.body);
-  console.log('body is', body1);
-  //console.log('email is = ',body1.email);
-  //res.send({"status" : "true"});
-  res.send({"status" : "true"});
-});
-});
 };
 
 
