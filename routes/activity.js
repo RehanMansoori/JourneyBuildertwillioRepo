@@ -122,8 +122,7 @@ exports.execute = function (req, res) {
             'method': 'GET',
             'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c,Email',
             'headers': {
-            'Authorization': 'Bearer '+body.access_token,
-            'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'
+            'Authorization': 'Bearer '+body.access_token
           }
       };
       accrequest(accoptions, function (error, response1) {
@@ -135,9 +134,10 @@ exports.execute = function (req, res) {
         //res.send({"status" : "true"});
         console.log('status is = ',body1.isEmailActive__c);
         var ischeck  = body1.isEmailActive__c;
-        if(ischeck === 'true'){
+        console.log('ischeck is = ',ischeck);
+        if(ischeck == 'true'){
           console.log('-----------true--------------');
-           res.send({"status" : "true"}); 
+          res.send({"status" : "true"}); 
         }
       });
   });
