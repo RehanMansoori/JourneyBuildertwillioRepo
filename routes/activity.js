@@ -117,7 +117,8 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
   var body = JSON.parse(response.body);
-  var isActive = '';
+
+  // Actual request start from here
   var accrequest = require('request');
 	var accoptions = {
   'method': 'GET',
@@ -131,18 +132,11 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   var body1 = JSON.parse(response1.body);
   console.log('body is', body1);
-  console.log('email is = ',body1.isEmailActive__c);
-  var checkEmail = body1.isEmailActive__c;
-    if(checkEmail == 'true'){
-      res.send({"status" : "true"}); 
-    }
-    if(checkEmail =='false'){
-       isActive ='false';
-    }
+  //console.log('email is = ',body1.email);
+  res.send({"status" : "true"});
+});
 });
 //res.send({"status" : "true"});
-});
-
 
 };
 
