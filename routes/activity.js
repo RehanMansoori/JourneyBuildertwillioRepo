@@ -135,10 +135,8 @@ exports.execute = function (req, res) {
         console.log('status is = ',body1.isEmailActive__c);
         var ischeck  = body1.isEmailActive__c;
         console.log('ischeck is = ',ischeck);
-        if(ischeck == 'true'){
-          console.log('-----------true--------------');
+          console.log('-----------true-------------');
           res.send({"status" : "true"}); 
-        }
       });
   });
 };
