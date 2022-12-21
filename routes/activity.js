@@ -133,12 +133,12 @@ exports.execute = function (req, res) {
         //res.send({"status" : "true"});
         //res.send({"status" : "true"});
         console.log('status is = ',body1.isEmailActive__c);
-        ischeck  = 'true';//body1.isEmailActive__c;
+        ischeck  = true; //body1.isEmailActive__c;
         console.log('ischeck is = ', ischeck);
            
       });
   });
-  if(ischeck == 'true'){
+  if(ischeck == true){
     console.log('------------true--------------');
     res.send({"status" : "true"});
   }
