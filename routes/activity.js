@@ -96,6 +96,7 @@ exports.execute = function (req, res) {
     var email  = jsonRequestBody.inArguments[0].email;
     console.log( "email value is "+ email);
     var ischeck ;
+     var isActive;
       var request = require('request');
       var options = {
         'method': 'POST',
@@ -133,10 +134,14 @@ exports.execute = function (req, res) {
         ischeck  = 'true'; //body1.isEmailActive__c;
         console.log('ischeck is = ', ischeck);
         if(ischeck == 'true'){
-          console.log('-----------true0--------------');
-          res.send({"status" : "true"});
+          console.log('-----------isActive true--------------');
+           isActive = 'true';
         }
       });
+      if(isActive == 'true'){
+        console.log('-------------true--------------');
+        res.send({"status" : "true"});
+      }
   });
 };
 
