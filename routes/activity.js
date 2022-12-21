@@ -95,7 +95,7 @@ exports.execute = function (req, res) {
     var endPointURL = 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP';
     var email  = jsonRequestBody.inArguments[0].email;
     console.log( "email value is "+ email);
-
+    var ischeck ;
       var request = require('request');
       var options = {
         'method': 'POST',
@@ -133,13 +133,16 @@ exports.execute = function (req, res) {
         //res.send({"status" : "true"});
         //res.send({"status" : "true"});
         console.log('status is = ',body1.isEmailActive__c);
-        var ischeck  = body1.isEmailActive__c;
+        ischeck  = body1.isEmailActive__c;
         console.log('ischeck is = ',ischeck);
-          console.log('-----------true-------------');
            
       });
   });
-  res.send({"status" : "true"});
+  if(ischeck == 'true'){
+    console.log('------------true--------------');
+    res.send({"status" : "true"});
+  }
+  
 };
 
 
