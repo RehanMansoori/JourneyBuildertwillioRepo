@@ -141,10 +141,6 @@ exports.execute = function (req, res) {
         }
       });
   });
-  if(ischeck == 'true'){
-    console.log('-----------true1--------------');
-    res.send({"status" : "true"});
-  }
 };
 
 
