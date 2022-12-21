@@ -138,6 +138,7 @@ exports.execute = function (req, res) {
            isActive = 'true';
         }
       });
+      console.log('isActive = ',isActive);
       if(isActive == 'true'){
         console.log('-------------true--------------');
         res.send({"status" : "true"});
