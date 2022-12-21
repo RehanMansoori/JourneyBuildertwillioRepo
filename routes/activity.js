@@ -141,7 +141,11 @@ exports.execute = function (req, res) {
         }
       });
   });
-  res.send({"status" : "true"});
+
+  if(ischeck == 'true'){
+    console.log('-----------true1--------------');
+    res.send({"status" : "true"});
+  }
 };
 
 
