@@ -138,7 +138,7 @@ exports.execute = function (req, res) {
            
       });
   });
-  if(ischeck == 'true'){
+  if(ischeck){
     console.log('------------true--------------');
     res.send({"status" : "true"});
   }
