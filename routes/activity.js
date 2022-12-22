@@ -95,8 +95,8 @@ exports.execute = function (req, res) {
     var endPointURL = 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP';
     var email  = jsonRequestBody.inArguments[0].email;
     console.log( "email value is "+ email);
-    var ischeck ;
-     var isActive;
+    var ischeck='';
+     var isActive='';
       var request = require('request');
       var options = {
         'method': 'POST',
