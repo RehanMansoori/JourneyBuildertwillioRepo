@@ -135,10 +135,11 @@ exports.execute = function (req, res) {
         console.log('ischeck is = ', ischeck);
         if(ischeck == 'true'){
           console.log('-----------inside true--------------');
-          res.send({"status" : "true"});
+          //res.send({"status" : "true"});
         }
       });
   });
+  res.send({"status" : "true"});
 };
 
 
