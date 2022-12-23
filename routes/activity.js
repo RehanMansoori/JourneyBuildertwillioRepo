@@ -131,9 +131,9 @@ exports.execute = function (req, res) {
         var body1 = JSON.parse(response1.body);
         console.log('body is', body1);
         console.log('status is = ',body1.isEmailActive__c);
-        ischeck  = 'true'; //body1.isEmailActive__c;
+        ischeck  = body1.isEmailActive__c;
         console.log('ischeck is = ', ischeck);
-        if(ischeck == 'true'){
+        if(ischeck == 'true' || ischeck == true){
           console.log('-----------insidetrue--------------');
           res.send({"status" : "true"});
         }
