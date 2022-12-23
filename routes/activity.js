@@ -141,11 +141,12 @@ exports.execute = function (req, res) {
             
         }
       });
+      if(isActive == 'true' || isActive == true){
+        console.log('inside active');
+        res.send({"status" : "true"});
+      }
   });
-    if(isActive == 'true' || isActive == true){
-      console.log('inside active');
-      res.send({"status" : "true"});
-    }
+   
 };
 
 
