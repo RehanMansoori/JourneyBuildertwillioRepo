@@ -141,11 +141,10 @@ exports.execute = function (req, res) {
         }
       });
   });
-  if(isActive == 'true' || isActive == true){
+  //if(isActive == 'true' || isActive == true){
       console.log('inside isactive block and request send');
       res.send({"status" : "true"});
-  }
-  
+  //}
 };
 
 
