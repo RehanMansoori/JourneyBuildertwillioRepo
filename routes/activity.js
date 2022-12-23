@@ -140,11 +140,12 @@ exports.execute = function (req, res) {
             console.log('isActive value = ',isActive);
             
         }
+        if(isActive == 'true' || isActive == true){
+          console.log('inside active');
+          res.send({"status" : "true"});
+        }
       });
-      if(isActive == 'true' || isActive == true){
-        console.log('inside active');
-        res.send({"status" : "true"});
-      }
+      
   });
    
 };
