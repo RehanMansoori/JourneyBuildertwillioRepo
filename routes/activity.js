@@ -121,7 +121,7 @@ exports.execute = function (req, res) {
         var accrequest = require('request');
 	      var accoptions = {
             'method': 'GET',
-            'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c,Email',
+            'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
             'headers': {
             'Authorization': 'Bearer '+body.access_token
           }
@@ -138,10 +138,14 @@ exports.execute = function (req, res) {
             isActive = 'true';
             console.log('---------afterisactivetrue-------------------');
             console.log('isActive value = ',isActive);
+            
         }
       });
   });
-    res.send({"status" : "true"});
+    if(isActive == 'true' || isActive == true){
+      console.log('inside active');
+      res.send({"status" : "true"});
+    }
 };
 
 
