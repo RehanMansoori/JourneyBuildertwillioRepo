@@ -135,11 +135,16 @@ exports.execute = function (req, res) {
         console.log('ischeck is = ', ischeck);
         if(ischeck == 'true' || ischeck == true){
           console.log('-----------insidetrue--------------');
-          res.send({"status" : "true"});
+            isActive = 'true';
+            console.log('---------afterisactivetrue-------------------');
+            console.log('isActive value = ',isActive);
         }
       });
   });
-  //res.send({"status" : "true"});
+  if(isActive == 'true' || isActive == true){
+      res.send({"status" : "true"});
+  }
+  
 };
 
 
