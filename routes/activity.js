@@ -96,14 +96,14 @@ exports.execute = function (req, res) {
     var email  = jsonRequestBody.inArguments[0].email;
     console.log( "email value is "+ email);
     var ischeck='';
-     var isActive='';
-      var request = require('request');
+    var isActive='';
+    var request = require('request');
       var options = {
         'method': 'POST',
         'url': accesstokenURL,
-        'headers': {
-          'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:0; LSKey-c$CookieConsentPolicy=0:0'
-        },
+          'headers': {
+            'Cookie': 'BrowserId=37NM5lnREe2Ik1X6ObvKKA; CookieConsentPolicy=0:0; LSKey-c$CookieConsentPolicy=0:0'
+          },
         formData: {
           'client_id': clientId,
           'client_secret': clinetsecret,
@@ -128,26 +128,14 @@ exports.execute = function (req, res) {
         };
         accrequest(accoptions, function (error, response1) {
           if (error) throw new Error(error);
+          //console.log(response1.body);
           var body1 = JSON.parse(response1.body);
-          console.log('body is', body1);
-          console.log('status is = ',body1.isEmailActive__c);
           ischeck  = body1.isEmailActive__c;
-          console.log('ischeck is = ', ischeck);
-          if(ischeck == 'true' || ischeck == true){
-            console.log('-----------insidetrue--------------');
-            isActive = 'true';
-            console.log('---------afterisactivetrue-------------------');
-            console.log('isActive value = ',isActive);
-            
-          }
-        });
-  });
-  if(isActive == 'true' || isActive == true){
-    console.log('inside active');
-    res.send({"status" : "true"});
-  }
+          console.log('ischeck = ', ischeck);
+          res.send({"status" : "true"});
+      });
+    });
 };
-
 
 /*
  * POST Handler for /publish/ route of Activity.
