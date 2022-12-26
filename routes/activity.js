@@ -126,7 +126,7 @@ exports.execute = function (req, res) {
             'Authorization': 'Bearer '+body.access_token
           }
       };
-      accrequest(accoptions, function (error, response1) {
+        accrequest(accoptions, function (error, response1) {
         if (error) throw new Error(error);
         var body1 = JSON.parse(response1.body);
         console.log('body is', body1);
@@ -145,7 +145,6 @@ exports.execute = function (req, res) {
           res.send({"status" : "true"});
         }
       });
-      
   });
    
 };
