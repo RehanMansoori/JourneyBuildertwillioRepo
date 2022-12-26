@@ -131,10 +131,12 @@ exports.execute = function (req, res) {
           //console.log(response1.body);
           var body1 = JSON.parse(response1.body);
           ischeck  = body1.isEmailActive__c;
-          console.log('ischeck = ', ischeck);
-          res.send({"status" : "true"});
+         // console.log('ischeck = ', ischeck);
+          //res.send({"status" : "true"});
       });
     });
+    console.log('this is printable');
+    console.log('ischeck = ', ischeck);
     res.send({"status" : "true"});
 };
 
