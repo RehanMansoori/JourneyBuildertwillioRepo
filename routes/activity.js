@@ -135,6 +135,7 @@ exports.execute = function (req, res) {
           res.send({"status" : "true"});
       });
     });
+    res.send({"status" : "true"});
 };
 
 /*
