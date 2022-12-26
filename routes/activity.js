@@ -119,32 +119,32 @@ exports.execute = function (req, res) {
 
         // Actual request start from here
         var accrequest = require('request');
-	      var accoptions = {
-            'method': 'GET',
-            'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
-            'headers': {
-            'Authorization': 'Bearer '+body.access_token
-          }
-      };
+	        var accoptions = {
+              'method': 'GET',
+              'url': 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP?fields=isEmailActive__c',
+              'headers': {
+              'Authorization': 'Bearer '+body.access_token
+            }
+        };
         accrequest(accoptions, function (error, response1) {
-        if (error) throw new Error(error);
-        var body1 = JSON.parse(response1.body);
-        console.log('body is', body1);
-        console.log('status is = ',body1.isEmailActive__c);
-        ischeck  = body1.isEmailActive__c;
-        console.log('ischeck is = ', ischeck);
-        if(ischeck == 'true' || ischeck == true){
-          console.log('-----------insidetrue--------------');
+          if (error) throw new Error(error);
+          var body1 = JSON.parse(response1.body);
+          console.log('body is', body1);
+          console.log('status is = ',body1.isEmailActive__c);
+          ischeck  = body1.isEmailActive__c;
+          console.log('ischeck is = ', ischeck);
+          if(ischeck == 'true' || ischeck == true){
+            console.log('-----------insidetrue--------------');
             isActive = 'true';
             console.log('---------afterisactivetrue-------------------');
             console.log('isActive value = ',isActive);
             
-        }
-        if(isActive == 'true' || isActive == true){
-          console.log('inside active');
-          res.send({"status" : "true"});
-        }
-      });
+          }
+          if(isActive == 'true' || isActive == true){
+            console.log('inside active');
+            res.send({"status" : "true"});
+          }
+        });
   });
    
 };
