@@ -95,7 +95,7 @@ exports.execute = function (req, res) {
     var endPointURL = 'https://myorgbrisk-dev-ed.my.salesforce.com/services/data/v56.0/sobjects/Contact/0032w00000qovuP';
     var email  = jsonRequestBody.inArguments[0].email;
     console.log( "email value is "+ email);
-    var ischeck='';
+    var ischeck;
     var isActive='';
     var request = require('request');
       var options = {
@@ -131,13 +131,14 @@ exports.execute = function (req, res) {
           //console.log(response1.body);
           var body1 = JSON.parse(response1.body);
           ischeck  = body1.isEmailActive__c;
-         // console.log('ischeck = ', ischeck);
-          //res.send({"status" : "true"});
+          console.log('ischeckinside = ', ischeck);
+          res.send({"status" : "true"});
+
       });
     });
     console.log('this is printable');
     console.log('ischeck = ', ischeck);
-    res.send({"status" : "true"});
+    //res.send({"status" : "true"});
 };
 
 /*
