@@ -75,7 +75,7 @@ define([
         console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
-    function save() {
+    function save(event) {
 		var email = $('#email').val(); 
 		
 		payload['arguments'].execute.inArguments = [{ 
@@ -87,8 +87,9 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         if(email ==''){
-            alert('please enter email');
-            return false;
+            //alert('please enter email');
+            event.preventDefault();
+            //return false;
         }             
     }       
    
