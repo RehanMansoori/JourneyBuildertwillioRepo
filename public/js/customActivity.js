@@ -88,7 +88,6 @@ define([
         connection.trigger('updateActivity', payload);
         if(email ==''){
             //alert('please enter email');
-            preventDefault();
             return false;
         }             
     
