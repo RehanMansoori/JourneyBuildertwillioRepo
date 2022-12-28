@@ -89,10 +89,7 @@ define([
         if(email ==''){
             alert('enter email');
             document.getElementById("email").style.border='2px solid red';
-            $.ajax({
-                type: "POST",
-                url: https://mc.s50.exacttarget.com/cloud/#app/Journey%20Builder/%23ef1ae868-8674-4b84-856a-101ae9762d52/17
-            });
+            return
         }             
     }       
    
