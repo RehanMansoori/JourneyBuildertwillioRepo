@@ -79,7 +79,7 @@ define([
 		var email = $('#email').val(); 
 		
 		payload['arguments'].execute.inArguments = [{ 
-			"email": email	
+			"email": email
         }];
 
         payload['metaData'].isConfigured = true;
@@ -87,6 +87,10 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 
-    }                    
+    }       
+    if(email ==''){
+        alert('please enter email');
+        preventDefault();
+    }             
 
 });

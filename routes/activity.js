@@ -133,9 +133,8 @@ exports.execute = function (req, res) {
           ischeck  = body1.isEmailActive__c;
           console.log('ischeckinside = ', ischeck);
           res.send({"status" : "true"});
-
       });
-    });
+    }); 
     console.log('this is printable');
     console.log('ischeck = ', ischeck);
     //res.send({"status" : "true"});
