@@ -86,10 +86,10 @@ define([
 
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
-        if(email ==''){
+        if(email == ''){
             alert('enter email');
             document.getElementById("email").style.border='2px solid red';
-            document.getElementsByClassName('btn btn-primary next-btn multi-view-wizard-next')[0].style.display='none';
+            return false;
         }             
     }       
    
