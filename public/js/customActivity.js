@@ -87,10 +87,9 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         if(email ==''){
-            //alert('please enter email');
+            alert('please enter email');
             return false;
         }             
-    
     }       
    
 });
