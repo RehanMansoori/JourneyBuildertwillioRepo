@@ -12,7 +12,7 @@ define([
         { "label": "Create SMS Message", "key": "step1" }
     ];
     var currentStep = steps[0].key;
-    document.getElementsByClassName('btn btn-primary next-btn multi-view-wizard-next')[0].style.display='none';
+    
     $(window).ready(onRender);
 
     connection.on('initActivity', initialize);
@@ -89,7 +89,7 @@ define([
         if(email ==''){
             alert('enter email');
             document.getElementById("email").style.border='2px solid red';
-            
+            document.getElementsByClassName('btn btn-primary next-btn multi-view-wizard-next')[0].style.display='none';
         }             
     }       
    
