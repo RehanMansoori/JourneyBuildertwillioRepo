@@ -88,8 +88,12 @@ define([
         connection.trigger('updateActivity', payload);
         if(email ==''){
             alert('enter email');
-            document.getElementById("email").style.border='2px solid red';
-            return
+            document.getElementById("email").style.border='2px solid red'; 
+            $('#email').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation(); 
+            });
+            
         }             
     }       
    
