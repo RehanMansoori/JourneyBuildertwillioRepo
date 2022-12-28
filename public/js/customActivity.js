@@ -87,8 +87,8 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         if(email ==''){
-            document.getElementById("email").style.border='2px solid red';
             alert('enter email');
+            document.getElementById("email").style.border='2px solid red';
             return false;
         }             
     }       
