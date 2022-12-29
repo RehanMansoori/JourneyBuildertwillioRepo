@@ -91,9 +91,10 @@ define([
         connection.trigger('updateActivity', payload);
         if(email == ''){
             alert('enter email');
-            document.getElementById('email').style.border = '2px solid';
-            stopPropagation();
-            preventDefault();
+            document.getElementById('email').style.border = '2px solid red';
+            $('testing').click(function(e){
+                e.preventDefault();
+            }
         }          
     }       
 });
