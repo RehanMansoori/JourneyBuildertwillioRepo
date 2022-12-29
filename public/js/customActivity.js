@@ -57,9 +57,9 @@ define([
         });
 
         connection.trigger('updateButton', {
-            button: 'next',
-            text: 'next',
-            visible: false
+            button: 'disabled',
+            text: 'done',
+            visible: true
         });
 
     }
