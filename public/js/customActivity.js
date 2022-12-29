@@ -89,10 +89,9 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         if(email == ''){
-            alert('enter mail');
-            preventdefault();
             alert('enter email');
             document.getElementById('email').style.border='2px solid red';
+            
         }          
     }       
 });
