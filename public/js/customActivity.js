@@ -58,8 +58,8 @@ define([
 
         connection.trigger('updateButton', {
             button: 'next',
-            text: 'done',
-            visible: true
+            text: 'next',
+            visible: false
         });
 
     }
@@ -90,8 +90,7 @@ define([
             alert('enter email');
             document.getElementById("email").style.border='2px solid red';
             
-        }       
-        return false;      
+        }          
     }       
    
 });
