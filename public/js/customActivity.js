@@ -75,7 +75,7 @@ define([
         console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
-    function save() {
+    function save(event) {
 		var email = $('#email').val(); 
 		
 		payload['arguments'].execute.inArguments = [{ 
@@ -89,11 +89,8 @@ define([
         if(email == ''){
             alert('enter email');
             document.getElementById("email").style.border='2px solid red';
-            preventdefault
-            return false;
-            
+            event.preventDefault();
         }          
     }       
-   
 });
 
