@@ -92,7 +92,7 @@ define([
             alert('enter mail');
             preventdefault();
             alert('enter email');
-            document.getElementById('email').style.border='2px solid red'
+            document.getElementById('email').style.border='2px solid red';
         }          
     }       
 });
