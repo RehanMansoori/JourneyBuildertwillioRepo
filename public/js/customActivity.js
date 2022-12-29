@@ -60,8 +60,8 @@ define([
             button: 'next',
             text: 'done',
             visible: true,
-            Id : 'testing',
-            disabled: true
+            Id: 'testing',
+            disabled:true
         });
 
     }
@@ -78,7 +78,8 @@ define([
     }
 
     function save() {
-		var email = $('#email').val(); 
+		var email = $('#email').val();
+        console.log('email is = ',email); 
 		
 		payload['arguments'].execute.inArguments = [{ 
 			"email": email
@@ -90,8 +91,11 @@ define([
         connection.trigger('updateActivity', payload);
         if(email == ''){
             alert('enter email');
-            document.getElementById("email").style.border='2px solid red';
-           
+            document.getElementById('email').style.border = '2px solid red';
+            $('testing').click(function(e){
+                e.preventDefault();
+            }
+            return false;
         }          
     }       
 });
