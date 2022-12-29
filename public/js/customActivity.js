@@ -57,7 +57,7 @@ define([
         });
 
         connection.trigger('updateButton', {
-            button: 'next',
+            button: 'submit',
             text: 'done',
             visible: true,
             Id: 'testing'
@@ -91,7 +91,6 @@ define([
         if(email == ''){
             alert('enter email');
             document.getElementById('email').style.border='2px solid red';
-            
         }          
     }       
 });
