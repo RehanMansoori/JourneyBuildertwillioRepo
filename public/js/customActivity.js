@@ -60,8 +60,7 @@ define([
             button: 'next',
             text: 'done',
             visible: true,
-            Id: 'testing',
-            disabled:true
+            Id: 'testing'
         });
 
     }
@@ -92,8 +91,8 @@ define([
         if(email == ''){
             alert('enter email');
             document.getElementById('email').style.border = '2px solid red';
-            $('testing').click(function(e){
-                e.preventDefault();
+            $('testing').click(function(event) {
+                event.preventDefault();
             }
         }          
     }       
