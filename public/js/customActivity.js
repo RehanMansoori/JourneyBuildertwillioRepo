@@ -57,7 +57,7 @@ define([
         });
 
         connection.trigger('updateButton', {
-            button: 'disabled',
+            button: 'next',
             text: 'done',
             visible: true
         });
@@ -89,8 +89,11 @@ define([
         if(email == ''){
             alert('enter email');
             document.getElementById("email").style.border='2px solid red';
+            preventdefault
+            return false;
             
         }          
     }       
    
 });
+
