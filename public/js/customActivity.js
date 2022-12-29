@@ -57,7 +57,7 @@ define([
         });
 
         connection.trigger('updateButton', {
-            button: 'submit',
+            button: 'next',   
             text: 'done',
             visible: true,
             Id: 'testing'
@@ -76,7 +76,7 @@ define([
         console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
-    function save() {
+    function save(event){
 		var email = $('#email').val();
         console.log('email is = ',email); 
 		
@@ -91,6 +91,8 @@ define([
         if(email == ''){
             alert('enter email');
             document.getElementById('email').style.border='2px solid red';
+            var x = event.cancelable;
+            alert(x);
         }          
     }       
 });
