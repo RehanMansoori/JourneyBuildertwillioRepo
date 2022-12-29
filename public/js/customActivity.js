@@ -91,9 +91,7 @@ define([
         if(email == ''){
             alert('enter email');
             document.getElementById('email').style.border = '2px solid red';
-            $('testing').click(function(event) {
-                event.preventDefault();
-            }
+            
         }          
     }       
 });
