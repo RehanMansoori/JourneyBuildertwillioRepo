@@ -80,8 +80,7 @@ define([
 
     function save(){
 		var email = $('#email').val();
-        
-		
+
 		payload['arguments'].execute.inArguments = [{ 
 			"email": email
         }];
@@ -91,12 +90,9 @@ define([
         connection.trigger('updateActivity', payload);
         console.log('email is = ',email);
         if(email == ''){
-            alert('enter email');
-            $("testing").click(function(event) {
-                event.preventDefault();
-            });
+            alert('enter email'); 
             document.getElementById('email').style.border='2px solid red';
-
+            return false;
         }          
     }       
 });
