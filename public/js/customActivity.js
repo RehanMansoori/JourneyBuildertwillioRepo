@@ -28,6 +28,7 @@ define([
         connection.trigger('ready');
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
+
     }
 
   function initialize(data) {
@@ -79,7 +80,8 @@ define([
 
     function save(){
 		var email = $('#email').val();
-       
+       var testing = document.querySelector(".testing");
+       console.log(testing.value);
 		
 		payload['arguments'].execute.inArguments = [{ 
 			"email": email
@@ -91,10 +93,11 @@ define([
         console.log('email is = ',email);
         if(email == ''){
             alert('enter email');
-            document.getElementById('email').style.border='2px solid red';
-            $("email").click(function(event) {
+            $("testing").click(function(event) {
                 event.preventDefault();
             });
+            document.getElementById('email').style.border='2px solid red';
+
         }          
     }       
 });
