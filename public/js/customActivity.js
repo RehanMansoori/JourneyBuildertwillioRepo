@@ -75,6 +75,7 @@ define([
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
+    
 
     function save(){
 		var email = $('#email').val();
@@ -83,13 +84,11 @@ define([
 		payload['arguments'].execute.inArguments = [{ 
 			"email": email
         }];
-        console.log('email is = ',email); 
-        
-
         payload['metaData'].isConfigured = true;
 
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
+        console.log('email is = ',email);
         if(email == ''){
             alert('enter email');
             document.getElementById('email').style.border='2px solid red';
