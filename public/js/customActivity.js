@@ -76,13 +76,15 @@ define([
         console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
-    function save(event){
+    function save(){
 		var email = $('#email').val();
-        console.log('email is = ',email); 
+       
 		
 		payload['arguments'].execute.inArguments = [{ 
 			"email": email
         }];
+        console.log('email is = ',email); 
+        
 
         payload['metaData'].isConfigured = true;
 
@@ -91,8 +93,6 @@ define([
         if(email == ''){
             alert('enter email');
             document.getElementById('email').style.border='2px solid red';
-            var x = event.cancelable;
-            alert(x);
         }          
     }       
 });
