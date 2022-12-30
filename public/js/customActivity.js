@@ -80,8 +80,7 @@ define([
 
     function save(){
 		var email = $('#email').val();
-       var testing = document.querySelector(".testing");
-       console.log(testing.value);
+        
 		
 		payload['arguments'].execute.inArguments = [{ 
 			"email": email
