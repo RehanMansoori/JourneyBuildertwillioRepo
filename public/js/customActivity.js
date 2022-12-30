@@ -86,11 +86,15 @@ define([
             payload['metaData'].isConfigured = true;
     
             console.log("Payload on SAVE function: "+JSON.stringify(payload));
-           // connection.trigger('updateActivity', payload);
-            console.log('email is = ',email);
+            if(email != ''){
+                connection.trigger('updateActivity', payload);
+            }  
             if(email == ''){
                 document.getElementById("email").style.border='2px solid red';
-            }          
+            }
+            
+            console.log('email is = ',email);
+                    
         } 
           
 });
