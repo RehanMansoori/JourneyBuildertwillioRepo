@@ -90,9 +90,9 @@ define([
                 connection.trigger('updateActivity', payload);
             }  
             if(email == ''){
+                alert('Please enter email');
                 document.getElementById("email").style.border='2px solid red';
             }
-            
             console.log('email is = ',email);
                     
         } 
