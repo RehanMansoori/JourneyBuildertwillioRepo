@@ -90,8 +90,6 @@ define([
         connection.trigger('updateActivity', payload);
         console.log('email is = ',email);
         if(email == ''){
-            alert('enter email'); 
-            document.getElementById('email').style.border='2px solid red';
             return false;
         }          
     }       
