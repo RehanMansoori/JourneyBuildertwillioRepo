@@ -77,21 +77,28 @@ define([
         console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
     
-
-    function save(){
-		var email = $('#email').val();
-
-		payload['arguments'].execute.inArguments = [{ 
-			"email": email
-        }];
-        payload['metaData'].isConfigured = true;
-
-        console.log("Payload on SAVE function: "+JSON.stringify(payload));
-        connection.trigger('updateActivity', payload);
-        console.log('email is = ',email);
-        if(email == ''){
-            return false;
-        }          
-    }       
+    payload['arguments'].execute.inArguments = [{ 
+        "email": email
+    }];
+    console.log('email is = ',email);
+    if(email != ''){
+        function save(){
+            var email = $('#email').val();
+    
+            payload['arguments'].execute.inArguments = [{ 
+                "email": email
+            }];
+            payload['metaData'].isConfigured = true;
+    
+            console.log("Payload on SAVE function: "+JSON.stringify(payload));
+            connection.trigger('updateActivity', payload);
+            console.log('email is = ',email);
+            if(email == ''){
+                document.getElementById("email").style.border='2px solid red';  
+                return false;
+            }          
+        } 
+    }
+          
 });
 
