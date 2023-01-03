@@ -91,8 +91,8 @@ define([
             }  
             if(email == ''){
                 alert('enter email');
-                document.getElementsByClassName('loader-overlay')[0].style.display='none';
                 document.getElementById("email").style.border='2px solid red';
+                document.getElementsByClassName('loader-overlay')[0].style.display='none';
                 document.getElementsByClassName('loader')[1].style.display = 'none';
             }       
         } 
