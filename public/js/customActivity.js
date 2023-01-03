@@ -90,8 +90,10 @@ define([
                 connection.trigger('updateActivity', payload);
             }  
             if(email == ''){
-                alert('Please enter email');
+                alert('enter email');
+
                 document.getElementById("email").style.border='2px solid red';
+                document.getElementsByClassName('loader')[1].style.display = 'none';
             }       
         } 
           
